@@ -70,7 +70,7 @@ binary-arch: build install
 	dh_link
 	dh_strip
 	dh_compress
-	dh_fixperms
+	dh_fixperms -X restund.conf -X restund.auth
 #	dh_perl
 #	dh_python
 #	dh_makeshlibs

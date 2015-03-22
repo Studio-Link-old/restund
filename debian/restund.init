@@ -32,7 +32,7 @@ case "$1" in
   start)
 	echo -n "Starting $DESC: "
 	start-stop-daemon --start --quiet --name $NAME \
-		--exec $DAEMON -- $DAEMON_OPTS
+		--chuid=daemon:daemon --exec $DAEMON -- $DAEMON_OPTS
 	echo "$NAME."
 	;;
   stop)
@@ -71,7 +71,7 @@ case "$1" in
 		--exec $DAEMON
 	sleep 1
 	start-stop-daemon --start --quiet --name $NAME \
-		--exec $DAEMON -- $DAEMON_OPTS
+		--chuid=daemon:daemon --exec $DAEMON -- $DAEMON_OPTS
 	echo "$NAME."
 	;;
   *)

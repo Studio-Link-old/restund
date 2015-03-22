@@ -125,5 +125,5 @@ install: $(BIN) $(MOD_BINS)
 
 config:
 	@mkdir -p $(DESTDIR)/etc
-	$(INSTALL) -m 0644 etc/restund.conf $(DESTDIR)/etc/.
-	$(INSTALL) -m 0644 etc/restund.auth $(DESTDIR)/etc/.
+	$(INSTALL) -m 0640 -o daemon etc/restund.conf $(DESTDIR)/etc/.
+	$(INSTALL) -m 0640 -o daemon etc/restund.auth $(DESTDIR)/etc/.
