@@ -15,8 +15,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/usr/sbin/restund
 NAME=restund
 DESC=restund
-USER=restund
-GROUP=restund
 DAEMON_OPTS=
 
 . /lib/lsb/init-functions
@@ -33,7 +31,7 @@ set -e
 case "$1" in
   start)
 	echo -n "Starting $DESC: "
-	start-stop-daemon --start --chuid=$USER:$GROUP --quiet --name $NAME \
+	start-stop-daemon --start --quiet --name $NAME \
 		--exec $DAEMON -- $DAEMON_OPTS
 	echo "$NAME."
 	;;
